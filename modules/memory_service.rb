@@ -1,7 +1,7 @@
-require './map_service.rb'
+require_relative 'map_service'
 
 class Memory
-    $DEFAULT_SAVE_FILENAME = 'save.txt'
+    $DEFAULT_SAVE_FILENAME = 'modules/save.txt'
 
     def self.save(arr,generation_number)
         file = File.open($DEFAULT_SAVE_FILENAME,'w'); 
