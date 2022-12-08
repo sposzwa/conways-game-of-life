@@ -1,5 +1,4 @@
 class Map
-
     def initialize(width,height)
         @map = Array.new(height){Array.new(width){0}}
         @width = width
@@ -8,6 +7,12 @@ class Map
 
     def get_map()
         return @map
+    end
+
+    def set(x,y,v)
+        x /= 8
+        y /= 8
+        @map[y][x] = v
     end
 
     def printer()
@@ -38,6 +43,7 @@ class Map
             end
         end
     end
+    
 
     def replace(arr)
         height = arr.length

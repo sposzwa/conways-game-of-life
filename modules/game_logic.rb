@@ -18,9 +18,9 @@ class Session
                 if count < 2
                     t_map[i][j] = 0
                 elsif count == 2 && @game_map.get_map[i][j] >= 1
-                    t_map[i][j] = (@game_map.get_map[i][j]+1)%6
+                    t_map[i][j] = (@game_map.get_map[i][j]+1)%5
                 elsif count == 3
-                    t_map[i][j] = (@game_map.get_map[i][j]+1)%6
+                    t_map[i][j] = (@game_map.get_map[i][j]+1)%5
                 elsif count > 3
                     t_map[i][j] = 0
                 end
@@ -33,6 +33,18 @@ class Session
         puts "GENERATION: #{@generation_number}"
         @game_map.printer
         puts
+    end
+
+    def get_cell(xCord,yCord)
+        @game_map.get_map[yCord][xCord]
+    end
+
+    def set_cell(xCord,yCord)
+        @game_map.set(xCord,yCord,1)
+    end
+
+    def get_generation_number()
+        return @generation_number
     end
 
     def save_game()
