@@ -44,7 +44,6 @@ class Map
         end
     end
     
-
     def replace(arr)
         height = arr.length
         width = arr[0].length
@@ -65,5 +64,4 @@ class Map
         @map = Array.new(height){Array.new(width){0}}
         self.insert(map_copy)      
     end
-    
 end
