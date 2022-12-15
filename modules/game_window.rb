@@ -13,7 +13,11 @@ class GameWindow < Gosu::Window
         @current_screen = 0
         @session = nil
         @mouse_hold = false
+        @muted = false;
         @background_images = [Gosu::Image.new("assets/images/menu.png", :tileable => true),Gosu::Image.new("assets/images/game-screen.png", :tileable => true)]
+        @menu_song = Gosu::Song.new("assets/sounds/menu.ogg")
+        @game_song = Gosu::Song.new("assets/sounds/game.ogg")
+        @menu_song.play(looping = true)
     end
 
     def update
@@ -40,6 +44,7 @@ class GameWindow < Gosu::Window
             when 0
                 @session = Session.new(1024/8,560/8)
                 @current_screen = 1
+                @game_song.play(looping = true)
             when 1
                 @session.save_game()
             end
@@ -56,6 +61,7 @@ class GameWindow < Gosu::Window
                 @session = Session.new(1024/8,560/8)
                 @session.load_game()
                 @current_screen = 1
+                @game_song.play(looping = true)
             when 1
                 @session.load_game()
             end
@@ -85,7 +91,12 @@ class GameWindow < Gosu::Window
                 @session = Session.new(1024/8,560/8)
             end
         when Gosu::KbM
-            puts "Mute"
+            @muted = !@muted
+            if @muted
+                @game_song.pause()
+            else
+                @game_song.play(looping = true)
+            end
         end
     end
 

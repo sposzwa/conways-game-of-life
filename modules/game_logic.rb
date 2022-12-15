@@ -18,9 +18,21 @@ class Session
                 if count < 2
                     t_map[i][j] = 0
                 elsif count == 2 && @game_map.get_map[i][j] >= 1
-                    t_map[i][j] = (@game_map.get_map[i][j]+1)%5
+                    cell = @game_map.get_map[i][j]
+                    case cell
+                    when 1..3
+                        t_map[i][j] = @game_map.get_map[i][j]+1
+                    when 4
+                        t_map[i][j] = @game_map.get_map[i][j]
+                    end
                 elsif count == 3
-                    t_map[i][j] = (@game_map.get_map[i][j]+1)%5
+                    cell = @game_map.get_map[i][j]
+                    case cell
+                    when 0..3
+                        t_map[i][j] = @game_map.get_map[i][j]+1
+                    when 4
+                        t_map[i][j] = @game_map.get_map[i][j]
+                    end
                 elsif count > 3
                     t_map[i][j] = 0
                 end
