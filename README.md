@@ -8,4 +8,4 @@ Fully written in plain Ruby using Gosu library
 
 ## Screenshots
 ![Main Menu](https://github.com/sposzwa/conways-game-of-life/blob/presentation/screenshots/screen-01.png?raw=true)
-![Gameplay](https://github.com/sposzwa/conways-game-of-life/blob/presentation/screenshots/screen-01.png?raw=true)
+![Gameplay](https://github.com/sposzwa/conways-game-of-life/blob/presentation/screenshots/screen-02.gif?raw=true)
