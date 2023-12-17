@@ -7,7 +7,7 @@ User inputs initial set of cells clicking on the screen in place where cell shou
 Game is completed with GUI and music that I have composed.
 
 ## Technology used 
-Fully written in plain Ruby using Gosu library.
+Fully written in plain Ruby using [Gosu](https://www.libgosu.org/) library.
 
 ## Screenshots
 ![Main Menu](https://github.com/sposzwa/conways-game-of-life/blob/presentation/screenshots/screen-01.png?raw=true)
